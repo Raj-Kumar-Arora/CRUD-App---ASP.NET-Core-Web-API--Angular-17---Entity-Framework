@@ -1,0 +1,36 @@
+<div class="container my-5"> 
+<h1 class="mb-3" > Employees</h1>
+
+@if(employees && employees.length > 0)
+{
+    <table class="table" >
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>E-MAIL</th>
+                <th>PHONE</th>
+                <th>SALARY</th>
+                <th>DEPARTMENT</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (employee of employees; track employee)
+            {
+                <tr>
+                    <td>{{employee.id}}</td>
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.email}}</td>
+                    <td>{{employee.phone}}</td>
+                    <td>{{employee.salary}}</td>
+                    <td>{{employee.department}}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@else 
+{
+    <p>No employees found. </p>
+}
+</div>
