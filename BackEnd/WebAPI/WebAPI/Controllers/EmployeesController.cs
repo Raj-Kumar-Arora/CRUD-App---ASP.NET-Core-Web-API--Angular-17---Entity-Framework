@@ -21,6 +21,7 @@ namespace WebAPI.Controllers
             var employees = await _employeeDbContext.Employees.ToListAsync();
             return Ok(employees);
         }
+
         [HttpPost]
         public async Task<IActionResult> AddEmployee(Employee employeeRequest)
         {

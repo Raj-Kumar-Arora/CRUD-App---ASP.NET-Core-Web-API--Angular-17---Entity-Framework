@@ -16,7 +16,14 @@ export class EmployeesService {
   constructor(private http:HttpClient) { }
 
   getAllEmployees() : Observable<Employee[]> {
-    console.log ('service.getallemployees ' + this.baseApiUrl + 'api/employees');
+   
     return this.http.get<Employee[]>(this.baseApiUrl + 'api/employees');
+  }
+
+  addEmployee(addEmployeeRequest: Employee) : Observable<Employee>{
+    console.log ('77 ');
+    console.log ('service.add employees ' + this.baseApiUrl + 'api/employees');
+    addEmployeeRequest.id = '00000000-000-000-000-0000000'
+    return this.http.post<Employee>(this.baseApiUrl + 'api/employees', addEmployeeRequest)
   }
 }
