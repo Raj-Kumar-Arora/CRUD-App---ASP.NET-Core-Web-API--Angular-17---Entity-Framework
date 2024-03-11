@@ -21,9 +21,8 @@ export class EmployeesService {
   }
 
   addEmployee(addEmployeeRequest: Employee) : Observable<Employee>{
-    console.log ('77 ');
-    console.log ('service.add employees ' + this.baseApiUrl + 'api/employees');
-    addEmployeeRequest.id = '00000000-000-000-000-0000000'
+    addEmployeeRequest.id = '00000000-0000-0000-0000-000000000000';
+    //addEmployeeRequest.id = '0000-0000-0000-0000-0000';
     return this.http.post<Employee>(this.baseApiUrl + 'api/employees', addEmployeeRequest);
   }
 

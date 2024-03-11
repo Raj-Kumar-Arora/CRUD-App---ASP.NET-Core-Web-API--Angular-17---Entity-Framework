@@ -27,13 +27,10 @@ export class AddEmployeeComponent {
   }
 
   addEmployee() {
-    console.log ('99 ');
     this.employeesService.addEmployee(this.addEmployeeRequest)
       .subscribe({
-        next: (employee) => { console.log ('55 '); 
-        //this.router.navigate(['employees']);  
-        },
-        error: (response) => { console.log ('11 '); console.log(response); }        
+        next: (employee) => { this.router.navigate(['employees']);         },
+        error: (response) => { console.log(response); }        
       });
   }
 }
